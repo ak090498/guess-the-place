@@ -25,13 +25,12 @@ const states=["North 24 Parganas"
 const url="https://www.googleapis.com/customsearch/v1"
 let imgNode=document.createElement("img")
 let imgAdd = document.getElementById('imgAdd')
-let answer=document.getElementById('answer').textContent
 let stateName=states[Math.trunc(Math.random()*10000000)%states.length]
 let fetchImageUrlAndAddtoImage = (url)=>{
   let imgUrl
   axios.get(url ,{params:{
    key: "your_google_api_key_goes_here",
-   cx: "your_custom_browser_api_key_goes_here",
+   cx: "your_custom_search_api_key_goes_here",
      q: stateName,
    searchType: "image"  
   }}).then((response)=>{
@@ -41,7 +40,7 @@ let fetchImageUrlAndAddtoImage = (url)=>{
     imgNode.setAttribute('id','img')
     imgAdd.appendChild(imgNode)
     let imgId=document.getElementById('img')
-    imgId.style.cssText="display:block;width:300px;height:300px;margin-top:50px;margin-left:auto;margin-right:auto"
+    imgId.style.cssText="display:block;width:300px;height:300px;margin-top:50px;margin-left:auto;margin-right:auto;box-shadow:2px 2px 5px grey"
     })
   .catch((error)=>{
     imgNode.src="Untitled design.jpg"
@@ -50,20 +49,26 @@ let fetchImageUrlAndAddtoImage = (url)=>{
     imgNode.setAttribute('id','img')
     imgAdd.appendChild(imgNode)
     let imgId=document.getElementById('img')
-    imgId.style.cssText="display:block;width:300px;height:300px;margin-top:50px;margin-left:auto;margin-right:auto"
+    imgId.style.cssText="display:block;width:300px;height:300px;margin-top:50px;margin-left:auto;margin-right:auto;box-shadow:2px 2px 5px grey"
   })
 }
 fetchImageUrlAndAddtoImage(url)
 let checkAnswer=(answer)=>{
-  if(answer.toLowerCase().equals(stateName))
-  alert('your answer is right')
-  else
+  if(answer.toLowerCase()===stateName.toLowerCase())
   {
-   answer=""  
+  alert('your answer is right')
+  document.getElementById('answer').value=""
+  }
+  else
+  { 
   alert('wrong answer, please try again')
   }
 }
-checkAnswer(answer)
+let check=document.getElementById('check')
+check.addEventListener('click',()=>{
+  let answer=document.getElementById('answer').value
+   checkAnswer(answer)
+})
    
   
 
