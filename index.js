@@ -26,6 +26,7 @@ const url="https://www.googleapis.com/customsearch/v1"
 let imgNode=document.createElement("img")
 let imgAdd = document.getElementById('imgAdd')
 let stateName=states[Math.trunc(Math.random()*10000000)%states.length]
+let check=document.getElementById('check')
 let fetchImageUrlAndAddtoImage = (url)=>{
   let imgUrl
   axios.get(url ,{params:{
@@ -64,7 +65,6 @@ let checkAnswer=(answer)=>{
   alert('wrong answer, please try again')
   }
 }
-let check=document.getElementById('check')
 check.addEventListener('click',()=>{
   let answer=document.getElementById('answer').value
    checkAnswer(answer)
