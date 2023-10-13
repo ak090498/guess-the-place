@@ -4,7 +4,16 @@
     font-family: 'Roboto Condensed', sans-serif;
     margin: auto;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
+}
+.text2{
+     width:500px;
+     font-size: large;
+     font-family: 'Roboto Condensed', sans-serif;
+     color: blue;
+     margin: auto;
+     text-align: center;
+     margin-top: 30px;
 }
 #answer{
     font-family: 'Roboto Condensed', sans-serif;
