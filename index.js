@@ -58,6 +58,7 @@ let checkAnswer=(answer)=>{
   if(answer.toLowerCase()===stateName.toLowerCase())
   {
   alert('your answer is right')
+  alert('Do you want to play again ?')
   document.getElementById('answer').value=""
   }
   else

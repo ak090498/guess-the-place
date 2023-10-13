@@ -10,10 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body>
+<body> 
    <div class="text">You will be given a random image from a district of West Bengal, you need to guess the name of the place</div>
+   <div class="text2">Please don't cheat by copy and pasting the image in image search</div>
     <div id="imgAdd"></div>
     <br>
+    <p class="text">Go to <a href="https://developers.google.com/custom-search/v1/overview">this link</a> , click on get a key, create a new project , for copying the key it will ask you to go to the API console, go there and copy the key and paste it here.</p>
+    <input class="input" placeholder="Your API key here" required id="apiKey">
+    <br>
+    <p class="text">You also need a programmable search Engine key. Go to <a href="https://programmablesearchengine.google.com/controlpanel/all">this link</a>, click on add , give a name to it; on what to search -> select search the entire web; in Search settings -> toggle Image search. Once done click on create, next go to customize, and copy the Search Engine ID and paste it here.</p>
+    <input class="input" placeholder="Your search engine id " required id="searchID"> 
     <input id="answer" type="text" placeholder="your answer here (case insensitive)">
     <br>
     <button id="check" id="check-button">check answer</button>
